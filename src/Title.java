@@ -10,7 +10,7 @@ public class Title {
         System.out.println("			| `.___.'| _| |__/ | _| |_  _| |__/ | _| |_!   |_    _| |_     | !__/ |// | |,   .'.  ` . .  | | ! !| !__.,  !  / /  ");
         System.out.println("			 `.____ .'|________||_____||________||_____|!____|  |_____|    | !.__/!-!__/[!__) )[!__) )[__|  !_]'.__.'[!_:  / /   ");
         System.out.println("			                                                              [__|                                          !__.'    ");
-        System.out.println("                                                                                                By Larry(Alpha)                  ");
+        System.out.println("                                                                                                By Marco(Alpha)                  ");
         System.out.println("");
     }
 

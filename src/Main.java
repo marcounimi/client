@@ -1,10 +1,6 @@
 import java.util.Scanner;           //libreria per l'input
 
 
-
-
-
-
 public class Main {
 
     public static void main(String[] args) {
