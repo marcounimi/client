@@ -1,8 +1,3 @@
-/*
-Unimi sede Crema
-@copyright Marco
-*/
-
 import java.util.Scanner;           //libreria per l'input
 
 
