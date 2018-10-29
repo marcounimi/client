@@ -1,6 +1,6 @@
 /*
-A project for Unimi sede Crema
-@copyright Larry
+Unimi sede Crema
+@copyright Marco
 */
 
 import java.util.Scanner;           //libreria per l'input
@@ -48,4 +48,3 @@ public class Main {
 
     }
 }
-
