@@ -5,6 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         //stampa Titolo iniziale
+        String RisultatoFinale;
         Title StampaTitoloIniziale = new Title();
         StampaTitoloIniziale.StampaIniziale();
 
@@ -34,8 +35,16 @@ public class Main {
         }
 
 
-
         //----------------test----------------
 
+        Nonce Valore = new Nonce();
+        /*
+        for(int i = 0; i <= passkey.length(); i++) {
+            char carattere = Valore.RotorePadre(passkey);
+            System.out.println("Il carattere "+ i +" è : " + carattere);
+        }
+        */
+        RisultatoFinale = Valore.RotorePadre(passkey);
+        System.out.println(RisultatoFinale);
     }
 }

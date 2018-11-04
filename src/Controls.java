@@ -63,6 +63,25 @@ public class Controls {
         return false;
     }
 
+    //ritorno valore numero array delle posizione in cui ci sono i numeri
+    int ControlloValoreNumeriArrayDeiNumeriIdentificati(String passkey){
+        String numeri = "1234567890";
+        int QuantitaNumericaAllinternoDiPasskey = 0;
+        char[] intNumeri = numeri.toCharArray();
+        char[] charPasskey = passkey.toCharArray();
+        for(int i = 0 ; i < passkey.length(); i++){
+            for(int j = 0; j < numeri.length(); j++){
+                if(charPasskey[i] == intNumeri[j]){
+                    QuantitaNumericaAllinternoDiPasskey++;  //quanti numeri ci sono all'interno dell'array passkey
+                    return i;
+                }
+
+            }
+        }
+        return 0;
+
+    }
+
     //regole passkey
     void RegolaPasskey(){
         System.out.println("<=====Deve contenere minimo 5 caratteri/numeri=====>");
