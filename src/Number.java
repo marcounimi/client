@@ -11,47 +11,47 @@ public class Number {
         int minuto = valore.CalcoloMinuto();
         minuto = minuto%10;
         if(minuto == 1){
-            risultatoMinuto = "dghabcijefkl";
+            risultatoMinuto = "cfgeaibhjaibhjdkl";
             return risultatoMinuto;
         }
         else if(minuto == 2){
-            risultatoMinuto = "defbcijghakl";
+            risultatoMinuto = "hfbecliaecliadgjk";
             return risultatoMinuto;
         }
         else if(minuto == 3){
-            risultatoMinuto = "abgicdefjhkl";
+            risultatoMinuto = "glicdbefjahkfjahk";
             return risultatoMinuto;
         }
         else if(minuto == 4){
-            risultatoMinuto = "ijdefkaghlbc";
+            risultatoMinuto = "gedbfkahifkahijlc";
             return risultatoMinuto;
         }
         else if(minuto == 5){
-            risultatoMinuto = "eabghidjcfkl";
+            risultatoMinuto = "ehlijkabijkabgdcf";
             return risultatoMinuto;
         }
         else if(minuto == 6){
-            risultatoMinuto = "abfgjhicdekl";
+            risultatoMinuto = "ejhbejhbigafcdkl";
             return risultatoMinuto;
         }
         else if(minuto == 7){
-            risultatoMinuto = "aefgkbchijdl";
+            risultatoMinuto = "fegbcdhkaijhkaijl";
             return risultatoMinuto;
         }
         else if(minuto == 8){
-            risultatoMinuto = "akdcghijlefb";
+            risultatoMinuto = "cdfghijakhijakleb";
             return risultatoMinuto;
         }
         else if(minuto == 9){
-            risultatoMinuto = "ajcdkbefghil";
+            risultatoMinuto = "icdkcdkbejafghl";
             return risultatoMinuto;
         }
         else if(minuto == 0){
-            risultatoMinuto = "jkcdeabhifgl";
+            risultatoMinuto = "jgkdciedcieabhfl";
             return risultatoMinuto;
         }
         else{
-            risultatoMinuto ="adijklefghbc";
+            risultatoMinuto ="ighbjcklecklefadc";
             return risultatoMinuto;
         }
 

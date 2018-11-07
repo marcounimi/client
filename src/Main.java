@@ -51,7 +51,7 @@ public class Main {
         System.out.println("giorno = " + valore.CalcoloGiorno());
         System.out.println("ora = " + valore.CalcoloOra());
         System.out.println("minuto = " + valore.CalcoloMinuto());
-
+        System.out.println("");
 
         //-------test-------TimestampNumber Generazione Vocabolario
 
@@ -70,7 +70,7 @@ public class Main {
         }
         */
         RisultatoFinale = Valore.RotorePadre(passkey);
-        System.out.println(RisultatoFinale);
-        System.out.println(Valore.VocabolarioStringa);
+        System.out.println("Risultato : " + RisultatoFinale);
+        System.out.println("Vocabolario : " + Valore.VocabolarioStringa);
     }
 }
