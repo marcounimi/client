@@ -88,5 +88,9 @@ public class Controls {
         System.out.println("<=====Non deve superare i 15 caratteri/numeri =====>");
         System.out.println("<=====Non bisogna inserire segni              =====>");
     }
+//  da testare perchè potrebbe non essere eseguita quando c'è un errore in timestamp
+    void ErroreTimestamp(){
+        System.out.println("Errore sulla classe Timestamp");
+    }
 
 }

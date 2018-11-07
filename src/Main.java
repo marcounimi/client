@@ -16,7 +16,6 @@ public class Main {
 
 
 
-
         //controlli
         //----------------PRIMO----------------
         Controls CaratteriLunghezza = new Controls();
@@ -35,9 +34,35 @@ public class Main {
         }
 
 
+        //----------------GENERATORE VOCABOLARIO----
+        /*
+        Number VocabolarioMinuto = new Number();
+        Timestamp Minuto = new Timestamp();
+        VocabolarioMinuto.VocabolarioMinuto(Minuto.CalcoloMinuto());
+
+        */
+
+
+        //----test----valoriannomese ecc
+
+        Timestamp valore = new Timestamp();
+        System.out.println("anno = " + valore.CalcoloAnno());
+        System.out.println("mese = " + valore.CalcoloMese());
+        System.out.println("giorno = " + valore.CalcoloGiorno());
+        System.out.println("ora = " + valore.CalcoloOra());
+        System.out.println("minuto = " + valore.CalcoloMinuto());
+
+
+        //-------test-------TimestampNumber Generazione Vocabolario
+
+
+
+
+
         //----------------test----------------
 
         Nonce Valore = new Nonce();
+        Number val = new Number();
         /*
         for(int i = 0; i <= passkey.length(); i++) {
             char carattere = Valore.RotorePadre(passkey);
@@ -46,5 +71,6 @@ public class Main {
         */
         RisultatoFinale = Valore.RotorePadre(passkey);
         System.out.println(RisultatoFinale);
+        System.out.println(Valore.VocabolarioStringa);
     }
 }

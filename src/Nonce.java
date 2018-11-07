@@ -3,9 +3,12 @@ import java.util.Base64;
 import java.util.Arrays;
 
 public class Nonce {
-    String RisultatoArrayInStringa;
+    public String RisultatoArrayInStringa;
+    Number VocabolarioGenerato = new Number();
+    String VocabolarioStringa = VocabolarioGenerato.VocabolarioMinuto() + VocabolarioGenerato.VocabolarioOra() + VocabolarioGenerato.VocabolarioGiorno() + VocabolarioGenerato.VocabolarioMese() + VocabolarioGenerato.VocabolarioAnno();
+    String encodedString = Base64.getEncoder().encodeToString(VocabolarioStringa.getBytes());
 
-    String VocabolarioStringa = "abcdefghilmnopqrstuvzABCDEFGHILMNOPQRSTUVZ"; //abcdefghijklmnopqrstuvwxyz
+    //String VocabolarioStringa = "abcdefghilmnopqrstuvzABCDEFGHILMNOPQRSTUVZ"; //abcdefghijklmnopqrstuvwxyz
     char[] ArrayVocabolarioCarattere = VocabolarioStringa.toCharArray();
 
     /*
@@ -42,5 +45,9 @@ Tutte le lettere vengono aumentate di posizione di 4 caratteri del Vocabolario.
             RisultatoArrayInStringa = Arrays.toString(ArrayPasskeyRisultato);
             return RisultatoArrayInStringa;
         }
+
+
+
+
 
     }
