@@ -46,18 +46,8 @@ public class Main {
         //----test----valoriannomese ecc
 
         Timestamp valore = new Timestamp();
-        System.out.println("anno = " + valore.CalcoloAnno());
-        System.out.println("mese = " + valore.CalcoloMese());
-        System.out.println("giorno = " + valore.CalcoloGiorno());
-        System.out.println("ora = " + valore.CalcoloOra());
-        System.out.println("minuto = " + valore.CalcoloMinuto());
+        System.out.println("Generato alle  = "+ valore.CalcoloOra() + ":"+ valore.CalcoloMinuto());
         System.out.println("");
-
-        //-------test-------TimestampNumber Generazione Vocabolario
-
-
-
-
 
         //----------------test----------------
 
@@ -71,6 +61,6 @@ public class Main {
         */
         RisultatoFinale = Valore.RotorePadre(passkey);
         System.out.println("Risultato : " + RisultatoFinale);
-        System.out.println("Vocabolario : " + Valore.VocabolarioStringa);
+        System.out.println("Alfabeto usato : " + Valore.VocabolarioStringa);
     }
 }

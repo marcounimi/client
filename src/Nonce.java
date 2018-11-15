@@ -39,6 +39,7 @@ Tutte le lettere vengono aumentate di posizione di 4 caratteri del Vocabolario.
             for (int j = 0; j < VocabolarioStringa.length(); j++) {
                 if (ArrayPasskey[i] == ArrayVocabolarioCarattere[j]) {
                 ArrayPasskeyRisultato[i] = ArrayVocabolarioCarattere[j+Spostamento];
+                Spostamento = Spostamento +1;
 
                 }
                 }
