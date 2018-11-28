@@ -6,9 +6,9 @@ public class Number {
     , risultatoAnno;
 
     Timestamp valore = new Timestamp();
+    public int minuto = valore.CalcoloMinuto();
 
     String VocabolarioMinuto(){
-        int minuto = valore.CalcoloMinuto();
         minuto = minuto%10;
         if(minuto == 1){
             risultatoMinuto = "cfgeaibhjaibhjdkl";

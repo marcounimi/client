@@ -1,3 +1,5 @@
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.Scanner;           //libreria per l'input
 
 
@@ -60,7 +62,16 @@ public class Main {
         }
         */
         RisultatoFinale = Valore.RotorePadre(passkey);
-        System.out.println("Risultato : " + RisultatoFinale);
         System.out.println("Alfabeto usato : " + Valore.VocabolarioStringa);
+
+        byte[] message = RisultatoFinale.getBytes(StandardCharsets.UTF_8);
+        String encoded = Base64.getEncoder().encodeToString(message);
+
+        char[] ArrayRisultato = encoded.toCharArray();
+        System.out.println("risultato: ");
+
+        System.out.println("[ "+ ArrayRisultato[val.minuto%10] +","+ ArrayRisultato[(val.minuto%10)+2]+","+ ArrayRisultato[(val.minuto%10)+5]+","+ ArrayRisultato[(val.minuto%10)+7]+","+ ArrayRisultato[(val.minuto%10)+12]+","+ ArrayRisultato[(val.minuto%10)+15]+","+ ArrayRisultato[(val.minuto%10)+18]+"]");
+
+
     }
 }
