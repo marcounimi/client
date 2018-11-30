@@ -3,13 +3,21 @@ import java.util.Base64;
 import java.util.Scanner;           //libreria per l'input
 
 
-public class Main {
+public class Main{
 
     public static void main(String[] args) {
-        //stampa Titolo iniziale
         String RisultatoFinale;
         Title StampaTitoloIniziale = new Title();
+        Controls CaratteriLunghezza = new Controls();
+        Controls Segni = new Controls();
+        Controls EccezioneData = new Controls();
+        Timestamp valore = new Timestamp();
+        Nonce Valore = new Nonce();
+        Number val = new Number();
+
+        //stampa Titolo iniziale
         StampaTitoloIniziale.StampaIniziale();
+
 
         //Richiesta input
         System.out.println("Inserisci la tua Passkey : ");
@@ -20,21 +28,28 @@ public class Main {
 
         //controlli
         //----------------PRIMO----------------
-        Controls CaratteriLunghezza = new Controls();
-        Controls Segni = new Controls();
-        if(!CaratteriLunghezza.LunghezzaCaratteri(passkey)){
-            System.out.println("Errore nell'inserimento della passkey");
-            CaratteriLunghezza.RegolaPasskey();
-            return;
 
+
+            if (!CaratteriLunghezza.LunghezzaCaratteri(passkey)) {
+                System.out.println("Errore nell'inserimento della passkey");
+                CaratteriLunghezza.RegolaPasskey();
+                return;  //eliminare per far vedere l'esecuzione totale
+            }
+            if (!Segni.InserimentoSegni(passkey)) {
+                System.out.println("Hai inserito uno o più caratteri/segni vietati");
+
+            } else {
+                System.out.println("passkey inserita con successo");
+            }
+
+        //ECCEZIONE
+        //verifica eccezione
+        //boolean eccezioneUno = EccezioneData.ValiditaData(4, 50, 2000);
+
+        boolean eccezioneUno = EccezioneData.ValiditaData(valore.CalcoloGiorno(), valore.CalcoloMese(), valore.CalcoloAnno());
+        if(!eccezioneUno){
+            System.out.println("eccezione rilevata : Data");
         }
-        if(!Segni.InserimentoSegni(passkey)){
-            System.out.println("Hai inserito uno o più caratteri/segni vietati");
-
-        }else{
-            System.out.println("passkey inserita con successo");
-        }
-
 
         //----------------GENERATORE VOCABOLARIO----
         /*
@@ -45,33 +60,35 @@ public class Main {
         */
 
 
-        //----test----valoriannomese ecc
+        //----Orario generazione
 
-        Timestamp valore = new Timestamp();
+
         System.out.println("Generato alle  = "+ valore.CalcoloOra() + ":"+ valore.CalcoloMinuto());
-        System.out.println("");
+        System.out.println();
 
         //----------------test----------------
-
-        Nonce Valore = new Nonce();
-        Number val = new Number();
         /*
         for(int i = 0; i <= passkey.length(); i++) {
             char carattere = Valore.RotorePadre(passkey);
             System.out.println("Il carattere "+ i +" è : " + carattere);
         }
         */
+
         RisultatoFinale = Valore.RotorePadre(passkey);
         System.out.println("Alfabeto usato : " + Valore.VocabolarioStringa);
+        //System.out.println("Risultato : " + RisultatoFinale);
+
 
         byte[] message = RisultatoFinale.getBytes(StandardCharsets.UTF_8);
         String encoded = Base64.getEncoder().encodeToString(message);
 
         char[] ArrayRisultato = encoded.toCharArray();
-        System.out.println("risultato: ");
+        System.out.println("risultato: [" + ArrayRisultato[val.CalcoloMinuto()%10] + "," + ArrayRisultato[(val.CalcoloMinuto()%10)+2]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+5]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+7]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+12]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+15]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+18]+"]");
 
-        System.out.println("[ "+ ArrayRisultato[val.minuto%10] +","+ ArrayRisultato[(val.minuto%10)+2]+","+ ArrayRisultato[(val.minuto%10)+5]+","+ ArrayRisultato[(val.minuto%10)+7]+","+ ArrayRisultato[(val.minuto%10)+12]+","+ ArrayRisultato[(val.minuto%10)+15]+","+ ArrayRisultato[(val.minuto%10)+18]+"]");
-
-
+        try{
+            System.out.println("risultato: [" + ArrayRisultato[val.CalcoloMinuto()%10] + "," + ArrayRisultato[(val.CalcoloMinuto()%10)+2]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+5]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+7]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+12]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+15]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+18]+"]");
+        }catch(ArrayIndexOutOfBoundsException exception){
+            System.out.println("Errore ArrayIndexOutOfBoundsException , vedi input");
+        }
     }
 }

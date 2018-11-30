@@ -1,15 +1,15 @@
-public class Number {
+public class Number extends Timestamp {
 
 //abcdefghijkl  mnopqrstuv  wxyzABCDEF  GHIJKLMNOP  QRSTUVWXYZ
-    Controls Errore = new Controls();
-    String risultatoMinuto,risultatoOra, errore, risultatoGiorno, risultatoMese
-    , risultatoAnno;
+    protected String risultatoMinuto;
+    protected String risultatoOra;
+    protected String risultatoGiorno;
+    protected String risultatoMese;
+    protected String risultatoAnno;
 
-    Timestamp valore = new Timestamp();
-    public int minuto = valore.CalcoloMinuto();
 
     String VocabolarioMinuto(){
-        minuto = minuto%10;
+        int minuto = CalcoloMinuto()%10;
         if(minuto == 1){
             risultatoMinuto = "cfgeaibhjaibhjdkl";
             return risultatoMinuto;
@@ -59,7 +59,7 @@ public class Number {
 
     }
     String VocabolarioOra(){
-        int ora = valore.CalcoloOra();
+        int ora = CalcoloOra();
         if(ora < 24 && ora > 0) {
             if (ora == 4) {
                 risultatoOra = "mstnopqruv";
@@ -90,7 +90,7 @@ public class Number {
         return risultatoOra;
     }
     String VocabolarioGiorno(){
-        int giorno = valore.CalcoloGiorno();
+        int giorno = CalcoloGiorno();
         if(giorno%2 == 0){
             risultatoGiorno = "wyDEzABxCF";
             return risultatoGiorno;
@@ -103,7 +103,7 @@ public class Number {
     }
 
     String VocabolarioMese(){
-        int mese = valore.CalcoloMese();
+        int mese = CalcoloMese();
         if(mese%2 == 0){
             risultatoMese = "GMNHIJKLOP";
             return risultatoMese;
@@ -116,7 +116,7 @@ public class Number {
     }
 
     String VocabolarioAnno(){
-        int anno = valore.CalcoloAnno();
+        int anno = CalcoloAnno();
         if(anno%10 == 8){
             risultatoAnno = "QYRSTUVWXZ";
             return risultatoAnno;
@@ -128,6 +128,11 @@ public class Number {
         }
 
 
+    }
+
+    protected String VocabolarioTotale(){
+        String Risultato = VocabolarioMinuto() + VocabolarioMese() + VocabolarioAnno() + VocabolarioOra() + VocabolarioMinuto()+ VocabolarioGiorno() + VocabolarioMinuto() +VocabolarioMese() + VocabolarioAnno();
+        return Risultato;
     }
 /*
     void VocabolarioFinale(){
@@ -143,3 +148,4 @@ public class Number {
 
 
 }
+
