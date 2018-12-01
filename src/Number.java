@@ -1,14 +1,14 @@
-public class Number extends Timestamp {
+class Number extends Timestamp {
 
 //abcdefghijkl  mnopqrstuv  wxyzABCDEF  GHIJKLMNOP  QRSTUVWXYZ
-    protected String risultatoMinuto;
-    protected String risultatoOra;
-    protected String risultatoGiorno;
-    protected String risultatoMese;
-    protected String risultatoAnno;
+     private String risultatoMinuto;
+     private String risultatoOra;
+     private String risultatoGiorno;
+     private String risultatoMese;
+     private String risultatoAnno;
 
 
-    String VocabolarioMinuto(){
+    private String VocabolarioMinuto(){
         int minuto = CalcoloMinuto()%10;
         if(minuto == 1){
             risultatoMinuto = "cfgeaibhjaibhjdkl";
@@ -58,7 +58,7 @@ public class Number extends Timestamp {
 
 
     }
-    String VocabolarioOra(){
+    private String VocabolarioOra(){
         int ora = CalcoloOra();
         if(ora < 24 && ora > 0) {
             if (ora == 4) {
@@ -89,7 +89,7 @@ public class Number extends Timestamp {
         */
         return risultatoOra;
     }
-    String VocabolarioGiorno(){
+    private String VocabolarioGiorno(){
         int giorno = CalcoloGiorno();
         if(giorno%2 == 0){
             risultatoGiorno = "wyDEzABxCF";
@@ -102,7 +102,7 @@ public class Number extends Timestamp {
         }
     }
 
-    String VocabolarioMese(){
+    private String VocabolarioMese(){
         int mese = CalcoloMese();
         if(mese%2 == 0){
             risultatoMese = "GMNHIJKLOP";
@@ -115,7 +115,7 @@ public class Number extends Timestamp {
 
     }
 
-    String VocabolarioAnno(){
+    private String VocabolarioAnno(){
         int anno = CalcoloAnno();
         if(anno%10 == 8){
             risultatoAnno = "QYRSTUVWXZ";
@@ -130,7 +130,7 @@ public class Number extends Timestamp {
 
     }
 
-    protected String VocabolarioTotale(){
+    String VocabolarioTotale(){
         String Risultato = VocabolarioMinuto() + VocabolarioMese() + VocabolarioAnno() + VocabolarioOra() + VocabolarioMinuto()+ VocabolarioGiorno() + VocabolarioMinuto() +VocabolarioMese() + VocabolarioAnno();
         return Risultato;
     }

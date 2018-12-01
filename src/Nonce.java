@@ -12,7 +12,6 @@ Deve creare un array con ogni lettera al suo interno
 Ci deve essere un controllo esterno che identifichi i numeri(se ne trova salta quell'array)
 Tutte le lettere vengono aumentate di posizione di 4 caratteri del Vocabolario.
 */
-
     String RotorePadre(String passkey) {
         char[] ArrayPasskey = passkey.toCharArray();
 

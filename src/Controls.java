@@ -2,7 +2,7 @@ import java.util.Calendar;
 
 public class Controls{
     //controlli
-    boolean LunghezzaCaratteri(String passkey){
+    public static boolean LunghezzaCaratteri(String passkey){
         if(passkey == null){
             throw new NullPointerException();
             //return false;
@@ -19,9 +19,8 @@ public class Controls{
     }
 
 
-    public boolean  ValiditaData(int day, int month, int year){
+    static boolean ValiditaData(int day, int month, int year){
         Calendar calendar = Calendar.getInstance();
-        calendar.setLenient(false);
         calendar.set(year, month, day);
         try {
             calendar.getTime();
@@ -34,7 +33,7 @@ public class Controls{
 
 
     //Controllo caratteri speciali[BLACKLIST]
-    boolean InserimentoSegni(String passkey){
+    static boolean InserimentoSegni(String passkey){
         char[] charArray = passkey.toCharArray();       //converto la stringa passkey in array
         String stringaCaratteriSpeciali = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~èòàù";
         char[] arrayCaratteriSpeciali = stringaCaratteriSpeciali.toCharArray();
@@ -101,7 +100,7 @@ public class Controls{
     }
 
     //regole passkey
-    void RegolaPasskey(){
+    static void RegolaPasskey(){
         System.out.println("<=====Deve contenere minimo 5 caratteri/numeri=====>");
         System.out.println("<=====Non deve superare i 15 caratteri/numeri =====>");
         System.out.println("<=====Non bisogna inserire segni              =====>");

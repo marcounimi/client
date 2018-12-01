@@ -7,17 +7,12 @@ public class Main{
 
     public static void main(String[] args) {
         String RisultatoFinale;
-        Title StampaTitoloIniziale = new Title();
-        Controls CaratteriLunghezza = new Controls();
-        Controls Segni = new Controls();
-        Controls EccezioneData = new Controls();
         Timestamp valore = new Timestamp();
         Nonce Valore = new Nonce();
         Number val = new Number();
 
         //stampa Titolo iniziale
-        StampaTitoloIniziale.StampaIniziale();
-
+        Title.StampaIniziale();
 
         //Richiesta input
         System.out.println("Inserisci la tua Passkey : ");
@@ -30,12 +25,12 @@ public class Main{
         //----------------PRIMO----------------
 
 
-            if (!CaratteriLunghezza.LunghezzaCaratteri(passkey)) {
+            if (!Controls.LunghezzaCaratteri(passkey)) {
                 System.out.println("Errore nell'inserimento della passkey");
-                CaratteriLunghezza.RegolaPasskey();
+                Controls.RegolaPasskey();
                 return;  //eliminare per far vedere l'esecuzione totale
             }
-            if (!Segni.InserimentoSegni(passkey)) {
+            if (!Controls.InserimentoSegni(passkey)) {
                 System.out.println("Hai inserito uno o più caratteri/segni vietati");
 
             } else {
@@ -46,7 +41,7 @@ public class Main{
         //verifica eccezione
         //boolean eccezioneUno = EccezioneData.ValiditaData(4, 50, 2000);
 
-        boolean eccezioneUno = EccezioneData.ValiditaData(valore.CalcoloGiorno(), valore.CalcoloMese(), valore.CalcoloAnno());
+        boolean eccezioneUno = Controls.ValiditaData(valore.CalcoloGiorno(), valore.CalcoloMese(), valore.CalcoloAnno());
         if(!eccezioneUno){
             System.out.println("eccezione rilevata : Data");
         }
@@ -85,10 +80,5 @@ public class Main{
         char[] ArrayRisultato = encoded.toCharArray();
         System.out.println("risultato: [" + ArrayRisultato[val.CalcoloMinuto()%10] + "," + ArrayRisultato[(val.CalcoloMinuto()%10)+2]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+5]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+7]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+12]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+15]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+18]+"]");
 
-        try{
-            System.out.println("risultato: [" + ArrayRisultato[val.CalcoloMinuto()%10] + "," + ArrayRisultato[(val.CalcoloMinuto()%10)+2]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+5]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+7]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+12]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+15]+","+ ArrayRisultato[(val.CalcoloMinuto()%10)+18]+"]");
-        }catch(ArrayIndexOutOfBoundsException exception){
-            System.out.println("Errore ArrayIndexOutOfBoundsException , vedi input");
-        }
     }
 }

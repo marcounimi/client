@@ -1,5 +1,5 @@
 public class Title {
-    void StampaIniziale(){
+    static void StampaIniziale(){
         System.out.println("");
         System.out.println("");
         System.out.println("");
