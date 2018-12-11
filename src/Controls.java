@@ -1,8 +1,26 @@
 import java.util.Calendar;
 
-public class Controls{
+class Controls{
+
+
+
+    static boolean ValiditaData(int day, int month, int year){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setLenient(false);
+        calendar.set(year, month, day);
+        try {
+            calendar.getTime();
+            return true;
+        } catch (Exception eccezione) {
+            System.out.println("la data del dispositivo non e' valida");
+            return false;
+        }
+    }
+
+
+
     //controlli
-    public static boolean LunghezzaCaratteri(String passkey){
+    static boolean LunghezzaCaratteri(String passkey){
         if(passkey == null){
             throw new NullPointerException();
             //return false;
@@ -19,17 +37,7 @@ public class Controls{
     }
 
 
-    static boolean ValiditaData(int day, int month, int year){
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(year, month, day);
-        try {
-            calendar.getTime();
-            return true;
-        } catch (Exception eccezione) {
-            System.out.println("la data del dispositivo non e' valida");
-            return false;
-        }
-    }
+
 
 
     //Controllo caratteri speciali[BLACKLIST]

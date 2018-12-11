@@ -122,7 +122,7 @@ class Number extends Timestamp {
             return risultatoAnno;
 
         }else{
-            risultatoAnno = "TUVWXYZQRS";
+            risultatoAnno = "TUVWXYZXNIOAIEUPQEURUBUZTEUVVOBLAPKQRS";
             return risultatoAnno;
 
         }

@@ -39,7 +39,7 @@ public class Main{
 
         //ECCEZIONE
         //verifica eccezione
-        //boolean eccezioneUno = EccezioneData.ValiditaData(4, 50, 2000);
+        //boolean eccezioneUno = Controls.ValiditaData(4, 50, 2000);
 
         boolean eccezioneUno = Controls.ValiditaData(valore.CalcoloGiorno(), valore.CalcoloMese(), valore.CalcoloAnno());
         if(!eccezioneUno){
